@@ -202,7 +202,7 @@ export const RESTRUCTURED_CV_DATA = {
     {
       id: "jci",
       title: "Volunteer Data Analyst",
-      company: "JCI Garden City",
+      company: "Junior Chamber International, Nigeria (JCI) · Local Organisation (JCI Garden City)",
       period: "Present",
       location: "Port Harcourt, Rivers State",
       roleType: "volunteer",
@@ -214,9 +214,10 @@ export const RESTRUCTURED_CV_DATA = {
       ],
       metrics: [
         { label: "Role Type", value: "Community Volunteer" },
+        { label: "Organisation", value: "JCI Garden City" },
         { label: "Focus", value: "Social Impact" }
       ],
-      tags: ["Community Impact", "Membership Tracking", "Strategic Planning", "KPI Dashboards"]
+      tags: ["JCI Nigeria", "JCI Garden City", "Community Impact", "Membership Tracking", "Strategic Planning", "KPI Dashboards"]
     }
   ] as CVRole[],
   projects: [
