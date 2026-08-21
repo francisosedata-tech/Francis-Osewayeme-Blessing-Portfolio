@@ -57,7 +57,7 @@ export const RESTRUCTURED_CV_DATA = {
     aboutParagraphs: [
       "I specialize in transforming complex datasets into strategic business and people intelligence using Power BI, SQL, Python, and Excel. My background in Sociology gives me a unique perspective on human behavior, helping me communicate insights that drive real change for both organizations and the people within them.",
       "I am passionate about leveraging data for social impact and building solutions that are both technically sound and people-centric.",
-      "Core Mission: To make business and people intelligence accessible, understandable, and actionable for everyone."
+      "Core Mission: To leverage data as a powerful tool for positive change — empowering organizations and communities through insightful analysis and practical recommendations."
     ],
     restructured: "Results-driven BI & People Analyst combining quantitative data modeling with sociological insight and HR metrics. Proven track record in engineering multi-state booking intelligence systems, reducing data errors by 40%, and building executive Power BI dashboards that optimize revenue visibility and human capital performance.",
     atsScore: 98
@@ -238,35 +238,37 @@ export const RESTRUCTURED_CV_DATA = {
     },
     {
       id: "ecommerce",
-      title: "E-commerce Orders' Analysis",
-      subtitle: "End-to-End SQL Data Pipeline & Interactive Power BI Command Center",
-      category: "E-Commerce & Retail Intelligence",
+      title: "UK online store sales and growth analysis",
+      subtitle: "End-to-End Retail BI Analysis & Interactive Sales Growth Dashboard (Tata / Forage)",
+      category: "Retail Intelligence & E-Commerce Growth",
       icon: "🛒",
-      impact: "Cleaned raw transactions with SQL and delivered interactive KPIs for revenue velocity and customer segments",
-      description: "End-to-end BI analysis of e-commerce orders dataset. Cleaned data using SQL, built an interactive Power BI dashboard with KPIs: revenue trends, top products, and customer segments.",
-      tools: ["SQL", "Power BI", "Excel", "BI Intelligence", "Data Modeling"],
+      impact: "Cleaned UK retail transactions with SQL/Power BI and delivered interactive KPIs for revenue velocity, seasonality, and global customer segments",
+      description: "End-to-end UK online store sales and growth analysis. Cleaned data, modeled sales patterns across global markets, and built an interactive Power BI dashboard tracking revenue trends, top performing products, regional demand, and customer retention.",
+      tools: ["Power BI", "SQL", "Excel", "BI Intelligence", "Data Modeling", "Cohort Analysis"],
       chartType: "line",
       chartData: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         datasets: [
           {
-            label: "Monthly Sales ($K)",
-            data: [42, 58, 65, 82, 74, 91, 108, 125],
+            label: "Monthly Sales Revenue (£K)",
+            data: [42, 58, 65, 82, 74, 91, 108, 125, 140, 165, 195, 210],
             borderColor: "#2a7de1",
             backgroundColor: "rgba(42, 125, 225, 0.15)"
           }
         ]
       },
       metricsSummary: [
-        { label: "Orders Analyzed", value: "15,400+" },
-        { label: "Revenue Mapped", value: "$680K" },
+        { label: "Transactions Analyzed", value: "500K+ Lines" },
+        { label: "Global Reach", value: "38 Countries" },
+        { label: "Peak Growth", value: "+35% YoY" },
         { label: "Data Quality", value: "100% Validated" }
       ],
       keyInsights: [
-        "Uncovered peak buying windows between 7 PM - 10 PM resulting in targeted promotional scheduling.",
-        "SQL data cleaning eliminated multi-currency order discrepancies completely."
+        "Uncovered peak purchasing frequency in Q4 leading into holiday campaigns, guiding inventory replenishment cycles.",
+        "SQL & Power Query data transformations eliminated multi-currency inconsistencies and cancelled unit discrepancies.",
+        "Identified top 10 repeat buyer regions contributing to 68% of recurring retail turnover."
       ],
-      githubUrl: "https://github.com/francisosedata-tech/E-commerce-Orders-Analysis"
+      githubUrl: "https://github.com/francisosedata-tech/UK-Online-Retail-Sales-Analysis-Forage/blob/3e6b0d826406879777d4dae1aaefec073c249840/README.md"
     },
     {
       id: "realestate",
@@ -297,7 +299,7 @@ export const RESTRUCTURED_CV_DATA = {
         "Discovered that 2-bedroom suburban units experienced 24% higher rental yield stability.",
         "Implemented DAX time-intelligence functions for Year-over-Year (YoY) revenue comparison."
       ],
-      githubUrl: "https://github.com/francisosedata-tech/Real-Estate-Growth-Analysis"
+      githubUrl: "https://github.com/francisosedata-tech/Francis-Blessing-Osewayeme-Portfolio/blob/496d8cc1ce29fd3ce94d0fcf2e5caebd0dea4c32/Real-Estate-Growth-Analysis-Report.md"
     }
   ] as CVProject[],
   skillGroups: [
@@ -338,9 +340,9 @@ export const RESTRUCTURED_CV_DATA = {
     }
   ],
   certifications: [
-    { title: "Data Analysis Certification", issuer: "Zyetech Innovation Technology", year: "2026" },
-    { title: "Data Visualization Simulation", issuer: "Tata / Forage", year: "2025" },
-    { title: "Human Resource Management (HRM)", issuer: "Hentech Services Limited", year: "2024" }
+    { title: "Data Analysis Certification", issuer: "Zyetech Innovation Technology" },
+    { title: "Data Visualization Simulation", issuer: "Tata / Forage" },
+    { title: "Human Resource Management (HRM)", issuer: "Hentech Services Limited" }
   ],
   awards: [
     {

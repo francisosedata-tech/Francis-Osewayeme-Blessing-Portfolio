@@ -102,7 +102,7 @@ export const DataStreamsExperience: React.FC<DataStreamsExperienceProps> = ({ on
               variant="outline"
               onClick={onOpenCvStudio}
             >
-              VIEW FULL EXPERIENCE & ATS AUDIT
+              VIEW COMPLETE RESUME & CREDENTIALS
             </MadButton>
           </div>
         )}

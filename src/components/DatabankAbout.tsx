@@ -38,7 +38,7 @@ export const DatabankAbout: React.FC = () => {
                 CORE MISSION
               </div>
               <p className="text-sm font-medium">
-                To make business and people intelligence accessible, understandable, and actionable for everyone.
+                To leverage data as a powerful tool for positive change — empowering organizations and communities through insightful analysis and practical recommendations.
               </p>
             </div>
 
@@ -49,7 +49,7 @@ export const DatabankAbout: React.FC = () => {
                 Academic & Professional Pedigree
               </h3>
               
-              <div className="p-5 rounded-xl bg-[#111827] border border-[#1a3a5c]/60 space-y-3">
+              <div className="p-5 rounded-xl bg-[#111827] border border-[#1a3a5c]/60 space-y-4">
                 {RESTRUCTURED_CV_DATA.education.map((edu, idx) => (
                   <div key={idx} className="space-y-1">
                     <div className="text-sm font-bold text-white">{edu.degree}</div>
@@ -57,6 +57,24 @@ export const DatabankAbout: React.FC = () => {
                     <p className="text-xs text-[#a0aec0]">{edu.relevance}</p>
                   </div>
                 ))}
+
+                {/* Certifications Section */}
+                <div className="pt-3 border-t border-[#1a3a5c]/60 space-y-2">
+                  <div className="text-xs font-mono-code font-bold text-[#2a7de1] uppercase tracking-wider">
+                    VERIFIED CERTIFICATIONS
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {RESTRUCTURED_CV_DATA.certifications.map((cert, idx) => (
+                      <div key={idx} className="p-2.5 rounded-lg bg-[#0a0a0a] border border-[#1a3a5c] flex items-start gap-2">
+                        <Award className="w-3.5 h-3.5 text-[#2a7de1] shrink-0 mt-0.5" />
+                        <div>
+                          <div className="text-xs font-semibold text-white leading-tight">{cert.title}</div>
+                          <div className="text-[11px] text-[#a0aec0] font-mono-code">{cert.issuer}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
                 <div className="pt-3 border-t border-[#1a3a5c]/60 flex items-start gap-2.5">
                   <Award className="w-4 h-4 text-[#2a7de1] shrink-0 mt-0.5" />

@@ -119,7 +119,7 @@ export const TerminalHero: React.FC<TerminalHeroProps> = ({
               className="inline-flex items-center gap-2 text-xs font-mono-code text-[#2a7de1] hover:text-white transition-colors cursor-pointer"
             >
               <FileText className="w-4 h-4" />
-              <span>Open CV Surgeon (Audit & ATS Ready Standard) →</span>
+              <span>View Executive Resume / CV Summary →</span>
             </button>
           </div>
 

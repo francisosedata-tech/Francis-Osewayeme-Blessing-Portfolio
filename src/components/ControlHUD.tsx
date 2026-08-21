@@ -82,10 +82,7 @@ export const ControlHUD: React.FC<ControlHUDProps> = ({
             className="px-3.5 py-2 rounded-lg bg-[#111827] border border-[#2a7de1]/40 text-[#e8edf3] hover:border-[#2a7de1] hover:text-white font-bold text-xs tracking-wider uppercase transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm group hover:scale-105"
           >
             <FileText className="w-4 h-4 text-[#2a7de1] group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline">CV SURGEON</span>
-            <span className="px-1.5 py-0.5 text-[10px] bg-[#2a7de1]/20 text-[#2a7de1] rounded font-mono-code font-bold">
-              98% ATS
-            </span>
+            <span>VIEW RESUME / CV</span>
           </button>
 
           {/* Hamburger toggle for mobile */}
