@@ -24,7 +24,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#e8edf3] font-sans-clean relative bg-architect-grid selection:bg-[#2a7de1] selection:text-white">
+    <div className="min-h-screen bg-[#f8fafc] text-[#0f172a] font-sans-clean relative bg-architect-grid selection:bg-[#2563eb] selection:text-white">
       
       {/* Header Navigation */}
       <ControlHUD
@@ -58,17 +58,17 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#1a2a3a] py-12 bg-[#0a0a0a] text-center text-xs text-[#6a7a8a] space-y-3 relative z-10 font-mono-code">
-        <div className="flex items-center justify-center gap-1.5 text-sm text-[#e8edf3]">
+      <footer className="border-t border-slate-200 py-12 bg-white text-center text-xs text-slate-500 space-y-3 relative z-10 font-mono-code shadow-inner">
+        <div className="flex items-center justify-center gap-1.5 text-sm text-slate-800 font-semibold">
           <span>© 2026 Francis Blessing Osewayeme</span>
           <span>&bull;</span>
           <span className="flex items-center gap-1">
-            Built with <Heart className="w-3.5 h-3.5 text-[#2a7de1] fill-[#2a7de1]" /> and ☕
+            Built with <Heart className="w-3.5 h-3.5 text-[#2563eb] fill-[#2563eb]" /> and ☕
           </span>
         </div>
 
-        <div className="text-[11px] text-[#a0aec0] flex items-center justify-center gap-1.5">
-          <Brain className="w-3.5 h-3.5 text-[#2a7de1]" />
+        <div className="text-[11px] text-slate-500 flex items-center justify-center gap-1.5">
+          <Brain className="w-3.5 h-3.5 text-[#2563eb]" />
           <span>Business Intelligence · People Analytics · Insights Strategy</span>
         </div>
 
@@ -77,7 +77,7 @@ export default function App() {
             href={RESTRUCTURED_CV_DATA.header.contact.harmonyGroveRepo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-[#2a7de1] hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-[#2563eb] hover:text-[#1d4ed8] font-semibold transition-colors"
           >
             <FolderOpen className="w-3.5 h-3.5" />
             <span>View Harmony Grove BI Case Study on GitHub</span>

@@ -28,14 +28,14 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({ mode, colorTheme }) 
     containerRef.current.appendChild(renderer.domElement);
 
     // Color resolution
-    let primaryHex = 0x00f0ff;
-    let secondaryHex = 0xb026ff;
+    let primaryHex = 0x2563eb;
+    let secondaryHex = 0x4f46e5;
     if (colorTheme === 'amber') {
-      primaryHex = 0xffb347;
-      secondaryHex = 0xff007f;
+      primaryHex = 0xd97706;
+      secondaryHex = 0xe11d48;
     } else if (colorTheme === 'green') {
-      primaryHex = 0x00ff66;
-      secondaryHex = 0x0099ff;
+      primaryHex = 0x059669;
+      secondaryHex = 0x2563eb;
     }
 
     const group = new THREE.Group();
@@ -50,7 +50,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({ mode, colorTheme }) 
         color: primaryHex,
         wireframe: true,
         transparent: true,
-        opacity: 0.65
+        opacity: 0.55
       });
       meshObject = new THREE.Mesh(geometry, wireframeMaterial);
       group.add(meshObject);
@@ -61,7 +61,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({ mode, colorTheme }) 
         color: secondaryHex,
         wireframe: true,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.7
       });
       const innerMesh = new THREE.Mesh(innerGeom, innerMat);
       group.add(innerMesh);
@@ -95,7 +95,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({ mode, colorTheme }) 
         color: secondaryHex,
         size: 0.08,
         transparent: true,
-        opacity: 0.9
+        opacity: 0.85
       });
       const pointsMesh = new THREE.Points(pointGeom, pointMat);
       group.add(pointsMesh);
@@ -113,7 +113,7 @@ export const Hero3DCanvas: React.FC<Hero3DCanvasProps> = ({ mode, colorTheme }) 
       color: primaryHex,
       size: 0.04,
       transparent: true,
-      opacity: 0.4
+      opacity: 0.35
     });
     const particleSystem = new THREE.Points(pGeometry, pMaterial);
     scene.add(particleSystem);
