@@ -19,6 +19,13 @@ export interface SQLQueryResult {
   executionTime: string;
 }
 
+export interface DashboardScreenshot {
+  title: string;
+  url: string;
+  pageName?: string;
+  description?: string;
+}
+
 export interface CVProject {
   id: string;
   title: string;
@@ -47,6 +54,8 @@ export interface CVProject {
   sqlQueryCode?: string;
   sqlQueryResult?: SQLQueryResult;
   daxSnippet?: string;
+  dashboardScreenshots?: DashboardScreenshot[];
+  primaryDashboardScreenshot?: string;
 }
 
 export const RESTRUCTURED_CV_DATA = {
@@ -259,6 +268,27 @@ export const RESTRUCTURED_CV_DATA = {
       ],
       githubUrl: "https://github.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study",
       dashboardPreviewTitle: "Harmony Grove Executive BI Command Suite",
+      primaryDashboardScreenshot: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/Business%20revenue%20dashboard.png",
+      dashboardScreenshots: [
+        {
+          title: "Revenue Overview (Page 1)",
+          pageName: "Page 1: Revenue Overview",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/Business%20revenue%20dashboard.png",
+          description: "Executive revenue view: ₦80.37M total revenue breakdown by city, booking segment, and instrument performance trends."
+        },
+        {
+          title: "Tutor Behavior & Retention (Page 2)",
+          pageName: "Page 2: Tutor Behavior",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/tutors%20dashboard.png",
+          description: "People analytics view: 88 tutors, 72.7% retention, attrition velocity, and critical churn tipping point at 3.0–3.49 rating."
+        },
+        {
+          title: "Client Engagement & Utilization (Page 3)",
+          pageName: "Page 3: Client Behavior",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/client%20dashoard.png",
+          description: "Client analytics view: 43% renewal rate, 47.8% corporate utilization, and Word of Mouth vs. Paid channels acquisition."
+        }
+      ],
       dashboardKpis: [
         { label: "Total Revenue", value: "₦80.37M", trend: "+18.4% YoY", isPositive: true },
         { label: "Active Tutors", value: "88 Tutors", trend: "+12 Q4", isPositive: true },
@@ -347,6 +377,15 @@ RETURN
       ],
       githubUrl: "https://github.com/francisosedata-tech/UK-Online-Retail-Sales-Analysis-Forage/blob/3e6b0d826406879777d4dae1aaefec073c249840/README.md",
       dashboardPreviewTitle: "UK Online Retail Global Performance Dashboard",
+      primaryDashboardScreenshot: "https://raw.githubusercontent.com/francisosedata-tech/UK-Online-Retail-Sales-Analysis-Forage/main/Screenshots/UK%20retail%20sales%20dashboard.png",
+      dashboardScreenshots: [
+        {
+          title: "UK Online Retail Performance & Seasonality Dashboard",
+          pageName: "Interactive Retail BI Dashboard",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/UK-Online-Retail-Sales-Analysis-Forage/main/Screenshots/UK%20retail%20sales%20dashboard.png",
+          description: "£10.65M revenue analysis across 38 global markets, monthly revenue trajectory, top 10 products, and repeat customer concentration."
+        }
+      ],
       dashboardKpis: [
         { label: "Total Net Revenue", value: "£1.28M", trend: "+35% Q4 Surge", isPositive: true },
         { label: "Total Invoices", value: "25,900+", trend: "38 Countries", isPositive: true },
@@ -445,6 +484,21 @@ RETURN
       ],
       githubUrl: "https://github.com/francisosedata-tech/Francis-Blessing-Osewayeme-Portfolio/blob/496d8cc1ce29fd3ce94d0fcf2e5caebd0dea4c32/Real-Estate-Growth-Analysis-Report.md",
       dashboardPreviewTitle: "PropTech Capital Yield & Churn Intelligence",
+      primaryDashboardScreenshot: "https://raw.githubusercontent.com/francisosedata-tech/Francis-Blessing-Osewayeme-Portfolio/main/Images/Dashboard1.png",
+      dashboardScreenshots: [
+        {
+          title: "Sales Performance & Growth (Dashboard 1)",
+          pageName: "Dashboard 1: Sales Performance",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Francis-Blessing-Osewayeme-Portfolio/main/Images/Dashboard1.png",
+          description: "24.25% revenue growth tracking, 54bn total revenue, top agents, property category split, and city sales performance."
+        },
+        {
+          title: "Customer Churn & Retention (Dashboard 2)",
+          pageName: "Dashboard 2: Churn Intelligence",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Francis-Blessing-Osewayeme-Portfolio/main/Images/Dashboard2.png",
+          description: "42.69% customer churn analysis, churn rate distribution across property types, and customer lifetime retention."
+        }
+      ],
       dashboardKpis: [
         { label: "Portfolio Value", value: "₦1.42B", trend: "+14.2% YoY", isPositive: true },
         { label: "Avg Cap Rate", value: "9.4%", trend: "Suburban Leading", isPositive: true },

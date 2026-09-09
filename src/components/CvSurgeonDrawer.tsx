@@ -222,6 +222,20 @@ ${RESTRUCTURED_CV_DATA.awards.map(a => `${a.title} - ${a.issuer}`).join('\n')}
                   <div>
                     <div className="font-bold text-slate-900 text-xs">{proj.title}</div>
                     <div className="text-[11px] font-mono-code text-[#2563eb] font-bold">{proj.category}</div>
+                    {proj.primaryDashboardScreenshot && (
+                      <div className="rounded-lg overflow-hidden border border-slate-200 aspect-[16/10] bg-slate-900 my-2 relative">
+                        <img
+                          src={proj.primaryDashboardScreenshot}
+                          alt={proj.title}
+                          referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover object-top"
+                          loading="lazy"
+                        />
+                        <div className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-slate-900/85 text-white font-mono-code text-[8px] font-medium">
+                          Power BI
+                        </div>
+                      </div>
+                    )}
                     <p className="text-[11px] text-slate-600 mt-1 line-clamp-3 leading-relaxed">{proj.impact}</p>
                   </div>
                   {proj.githubUrl && (
