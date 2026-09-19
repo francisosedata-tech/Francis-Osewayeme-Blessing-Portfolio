@@ -40,7 +40,7 @@ ChartJS.register(
 export const CaseFilesProjects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<CVProject | null>(null);
   const [activeTab, setActiveTab] = useState<Record<string, 'dashboard' | 'sql' | 'dax' | 'insights'>>({
-    'harmony-grove': 'dashboard',
+    'food-waste-africa': 'dashboard',
     'ecommerce': 'dashboard',
     'realestate': 'dashboard'
   });
@@ -172,9 +172,17 @@ export const CaseFilesProjects: React.FC = () => {
                 {/* Project Header */}
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <span className="text-[10px] font-mono-code font-bold text-[#2563eb] uppercase px-2.5 py-0.5 rounded bg-blue-50 border border-blue-200 inline-block mb-1.5">
-                      {project.category}
-                    </span>
+                    <div className="flex items-center gap-2 flex-wrap mb-1.5">
+                      <span className="text-[10px] font-mono-code font-bold text-[#2563eb] uppercase px-2.5 py-0.5 rounded bg-blue-50 border border-blue-200 inline-block">
+                        {project.category}
+                      </span>
+                      {project.isLatest && (
+                        <span className="text-[10px] font-mono-code font-bold text-emerald-700 bg-emerald-50 border border-emerald-300 uppercase px-2.5 py-0.5 rounded-full inline-flex items-center gap-1.5 shadow-xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                          Latest Project
+                        </span>
+                      )}
+                    </div>
                     <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#2563eb] transition-colors leading-tight">
                       {project.title}
                     </h3>

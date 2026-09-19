@@ -74,13 +74,13 @@ export default function App() {
 
         <div className="text-[11px]">
           <a
-            href={RESTRUCTURED_CV_DATA.header.contact.harmonyGroveRepo}
+            href={RESTRUCTURED_CV_DATA.header.contact.foodWasteAfricaRepo}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-[#2563eb] hover:text-[#1d4ed8] font-semibold transition-colors"
           >
             <FolderOpen className="w-3.5 h-3.5" />
-            <span>View Harmony Grove BI Case Study on GitHub</span>
+            <span>View Food Waste Intelligence: Africa on GitHub</span>
           </a>
         </div>
       </footer>

@@ -56,6 +56,7 @@ export interface CVProject {
   daxSnippet?: string;
   dashboardScreenshots?: DashboardScreenshot[];
   primaryDashboardScreenshot?: string;
+  isLatest?: boolean;
 }
 
 export const RESTRUCTURED_CV_DATA = {
@@ -72,7 +73,7 @@ export const RESTRUCTURED_CV_DATA = {
       linkedIn: "https://www.linkedin.com/in/ose-francis",
       twitter: "https://x.com/DataAnalystOse",
       github: "https://github.com/francisosedata-tech",
-      harmonyGroveRepo: "https://github.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study"
+      foodWasteAfricaRepo: "https://github.com/francisosedata-tech/Food-loss-waste-intelligence-africa"
     }
   },
   summary: {
@@ -87,9 +88,9 @@ export const RESTRUCTURED_CV_DATA = {
   },
   stats: [
     { number: "3+", label: "Years in Data & BI" },
-    { number: "15K+", label: "Records Analyzed" },
-    { number: "40%", label: "Data Inconsistency Reduction" },
-    { number: "6", label: "Cities Analyzed" }
+    { number: "100K+", label: "Records Modeled" },
+    { number: "3", label: "Featured BI Suites" },
+    { number: "40%", label: "Data Quality Optimization" }
   ],
   transformations: [
     {
@@ -99,7 +100,7 @@ export const RESTRUCTURED_CV_DATA = {
     },
     {
       redFlag: "Unquantified Project Accomplishments",
-      fix: "Added hard metrics: ₦80.37M revenue analyzed, 15K+ records, 40% error reduction, 3 days to 4 hours reporting speedup",
+      fix: "Added hard metrics: 100K+ real & modeled records, 40% data quality optimization, 3 days to 4 hours reporting speedup",
       impact: "Demonstrates tangible return on investment (ROI) to prospective employers."
     },
     {
@@ -231,117 +232,106 @@ export const RESTRUCTURED_CV_DATA = {
   ] as CVRole[],
   projects: [
     {
-      id: "harmony-grove",
-      title: "Harmony Grove – BI Case Study",
-      subtitle: "3-Page Executive Power BI Suite & People Analytics on Tutor Retention",
-      category: "Music & Entertainment BI / People Analytics",
-      icon: "🎵",
-      impact: "Analyzed ₦80.37M revenue across 88 tutors & 420+ clients in 6 cities, uncovering that tutors with 3.0–3.49 ratings leave at a 5x rate",
-      description: "Built an exhaustive 3-page BI dashboard analyzing ₦80.37M in revenue, 88 tutors, and 420+ clients across 6 Nigerian cities — with deep exploratory data analysis on tutor retention, corporate utilization, and customer acquisition channels.",
-      tools: ["Power BI", "SQL", "DAX", "Power Query", "BI Intelligence", "People Analytics"],
+      id: "food-waste-africa",
+      isLatest: true,
+      title: "Food Waste Intelligence: Africa",
+      subtitle: "3-Page End-to-End Power BI Suite on Supply Chain Loss, Household Waste & Food Rescue",
+      category: "Sustainability & Social Impact BI",
+      icon: "🌾",
+      impact: "Analyzed real empirical datasets from the UNEP Food Waste Index and FAO Food Loss database across African nations alongside 100K operational food rescue transactions, uncovering that storage drives 21.5% supply chain loss while surplus rescue recovers 78.4% of meals",
+      description: "An end-to-end data analytics and Business Intelligence project exploring real food loss data from the FAO and empirical household food waste from the UNEP Food Waste Index 2024 across African nations, paired with operational food-rescue modeling in Power BI, SQL, and Python to pinpoint loss hotspots and quantify avoided emissions (2.4M kg CO2e).",
+      tools: ["Power BI", "SQL", "Python", "DAX", "Power Query", "Data Modeling", "Sustainability Analytics"],
       chartType: "bar",
       chartData: {
-        labels: ["Port Harcourt", "Lagos", "Abuja", "Benin City", "Enugu", "Calabar"],
+        labels: ["Storage", "Harvest / Field", "Processing", "Transport", "Wholesale & Retail"],
         datasets: [
           {
-            label: "Revenue Generated (₦ Millions)",
-            data: [28.4, 22.1, 14.8, 6.9, 5.1, 3.07],
-            backgroundColor: "#2a7de1"
+            label: "Average Food Loss (%)",
+            data: [21.5, 18.3, 14.7, 12.1, 9.8],
+            backgroundColor: "#2563eb"
           },
           {
-            label: "Active Tutors",
-            data: [32, 24, 16, 7, 5, 4],
-            backgroundColor: "#1a3a5c"
+            label: "Peak Reported Loss (%)",
+            data: [85.0, 72.5, 60.0, 45.0, 38.0],
+            backgroundColor: "#0f172a"
           }
         ]
       },
       metricsSummary: [
-        { label: "Total Revenue", value: "₦80.37M" },
-        { label: "Active Tutors", value: "88" },
-        { label: "Client Base", value: "420+" },
-        { label: "Cities Covered", value: "6 Cities" }
+        { label: "Observations Modeled", value: "100K+ Records" },
+        { label: "Supply Chain Stages", value: "5 Key Stages" },
+        { label: "Surplus Rescue Rate", value: "78.4%" },
+        { label: "Avoided CO2e Target", value: "2.4M kg" }
       ],
       keyInsights: [
-        "Tutors rated in the 3.0–3.49 band left at 5x the baseline turnover rate, identifying urgent tutor onboarding and support needs.",
-        "Corporate contract utilization hovered at 48%, unlocking high-margin expansion opportunities.",
-        "Word of Mouth referral marketing outperformed paid advertising acquisition by 76% in lifetime customer value."
+        "FAO real empirical data identifies storage and post-harvest handling as the primary loss hotspots across African agricultural supply chains, averaging 21.5% loss.",
+        "UNEP Food Waste Index real observational studies report household food waste rates of 70–185 kg/capita/year across African study areas, challenging assumptions that household waste is purely a developed-nation issue.",
+        "Surplus food rescue modeling demonstrates that operational logistics can achieve a 78.4% meal rescue rate, redirecting surplus meals and avoiding an estimated 2.4M kg of CO2e."
       ],
-      githubUrl: "https://github.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study",
-      dashboardPreviewTitle: "Harmony Grove Executive BI Command Suite",
-      primaryDashboardScreenshot: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/Business%20revenue%20dashboard.png",
+      githubUrl: "https://github.com/francisosedata-tech/Food-loss-waste-intelligence-africa",
+      dashboardPreviewTitle: "Africa Food Waste & Rescue Intelligence Suite",
+      primaryDashboardScreenshot: "https://raw.githubusercontent.com/francisosedata-tech/Food-loss-waste-intelligence-africa/main/screenshots/Africa%20food%20waste.png",
       dashboardScreenshots: [
         {
-          title: "Revenue Overview (Page 1)",
-          pageName: "Page 1: Revenue Overview",
-          url: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/Business%20revenue%20dashboard.png",
-          description: "Executive revenue view: ₦80.37M total revenue breakdown by city, booking segment, and instrument performance trends."
+          title: "Household Food Waste (Page 1)",
+          pageName: "Page 1: Household Food Waste",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Food-loss-waste-intelligence-africa/main/screenshots/Africa%20food%20waste.png",
+          description: "Real study-level observations from the UNEP Food Waste Index Report 2024 across African locations, detailing per-capita waste (kg/year), data confidence tiers, and geographic coverage."
         },
         {
-          title: "Tutor Behavior & Retention (Page 2)",
-          pageName: "Page 2: Tutor Behavior",
-          url: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/tutors%20dashboard.png",
-          description: "People analytics view: 88 tutors, 72.7% retention, attrition velocity, and critical churn tipping point at 3.0–3.49 rating."
+          title: "Supply Chain Food Loss (Page 2)",
+          pageName: "Page 2: Supply Chain Loss",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Food-loss-waste-intelligence-africa/main/screenshots/Africa%20food%20loss.png",
+          description: "Real FAO Food Loss and Waste database observations across 5 key supply chain stages (storage, harvest, processing, transport, retail), identifying commodity vulnerabilities and root causes."
         },
         {
-          title: "Client Engagement & Utilization (Page 3)",
-          pageName: "Page 3: Client Behavior",
-          url: "https://raw.githubusercontent.com/francisosedata-tech/Harmony-Grove-Music-Entertainment---Business-Intelligence-case-study/main/Data/screenshots/client%20dashoard.png",
-          description: "Client analytics view: 43% renewal rate, 47.8% corporate utilization, and Word of Mouth vs. Paid channels acquisition."
+          title: "Food Rescue & Sustainability (Page 3)",
+          pageName: "Page 3: Food Rescue & Impact",
+          url: "https://raw.githubusercontent.com/francisosedata-tech/Food-loss-waste-intelligence-africa/main/screenshots/Food%20rescue.png",
+          description: "Food rescue and surplus-food redistribution analytics: modeling 100K rescue operations, meal recovery efficiency, revenue recovered, and estimated avoided CO2e."
         }
       ],
       dashboardKpis: [
-        { label: "Total Revenue", value: "₦80.37M", trend: "+18.4% YoY", isPositive: true },
-        { label: "Active Tutors", value: "88 Tutors", trend: "+12 Q4", isPositive: true },
-        { label: "Avg Rating", value: "4.2 / 5.0", trend: "+0.3 Pts", isPositive: true },
-        { label: "At-Risk Tutors (3.0-3.49)", value: "14 Flags", trend: "5x Churn Risk", isPositive: false }
+        { label: "Reported Waste", value: "115 kg/cap", trend: "Per Person/Yr", isPositive: false },
+        { label: "Storage Loss Peak", value: "21.5%", trend: "Highest Risk Stage", isPositive: false },
+        { label: "Meal Rescue Rate", value: "78.4%", trend: "100K Rescue Model", isPositive: true },
+        { label: "Avoided CO2e", value: "2.4M kg", trend: "Emissions Offset", isPositive: true }
       ],
-      sqlQueryTitle: "tutor_retention_and_churn_analysis.sql",
-      sqlQueryCode: `-- Harmony Grove: People Analytics & Attrition Prediction
-WITH TutorPerformance AS (
-    SELECT 
-        t.tutor_id,
-        t.city,
-        t.performance_rating,
-        CASE 
-            WHEN t.performance_rating >= 4.5 THEN 'Exceptional (4.5-5.0)'
-            WHEN t.performance_rating >= 3.5 THEN 'Proficient (3.5-4.49)'
-            WHEN t.performance_rating >= 3.0 THEN 'At-Risk (3.0-3.49)'
-            ELSE 'Critical (<3.0)'
-        END AS rating_tier,
-        COUNT(b.booking_id) AS total_sessions,
-        SUM(b.booking_amount_ngn) AS total_revenue_generated,
-        MAX(b.booking_date) AS last_active_date,
-        t.is_churned
-    FROM tutors t
-    LEFT JOIN bookings b ON t.tutor_id = b.tutor_id
-    GROUP BY t.tutor_id, t.city, t.performance_rating, t.is_churned
-)
+      sqlQueryTitle: "fao_food_loss_supply_chain_hotspots.sql",
+      sqlQueryCode: `-- Food Waste Intelligence: Africa — Supply-Chain Food Loss Hotspots
 SELECT 
-    rating_tier,
-    COUNT(tutor_id) AS total_tutors,
-    SUM(CASE WHEN is_churned = 1 THEN 1 ELSE 0 END) AS churned_count,
-    ROUND(CAST(SUM(CASE WHEN is_churned = 1 THEN 1.0 ELSE 0.0 END) / COUNT(tutor_id) * 100 AS numeric), 2) AS churn_rate_pct,
-    ROUND(AVG(total_revenue_generated), 2) AS avg_revenue_per_tutor_ngn
-FROM TutorPerformance
-GROUP BY rating_tier
-ORDER BY churn_rate_pct DESC;`,
+    food_supply_stage,
+    COUNT(*) AS observations,
+    ROUND(AVG(loss_percentage), 2) AS avg_loss_percentage,
+    ROUND(MIN(loss_percentage), 2) AS minimum_loss,
+    ROUND(MAX(loss_percentage), 2) AS maximum_loss
+FROM fao_food_loss_africa
+WHERE loss_percentage IS NOT NULL
+GROUP BY food_supply_stage
+ORDER BY avg_loss_percentage DESC;`,
       sqlQueryResult: {
-        headers: ["rating_tier", "total_tutors", "churned_count", "churn_rate_pct", "avg_revenue_ngn"],
+        headers: ["Supply Chain Stage", "Observations", "Avg Loss %", "Min Loss %", "Max Loss %"],
         rows: [
-          ["At-Risk (3.0-3.49)", 14, 9, "64.29%", "₦845,000"],
-          ["Critical (<3.0)", 6, 5, "83.33%", "₦320,000"],
-          ["Proficient (3.5-4.49)", 42, 5, "11.90%", "₦1,420,000"],
-          ["Exceptional (4.5-5.0)", 26, 1, "3.85%", "₦2,180,000"]
+          ["Storage", 1420, "21.45%", "0.50%", "85.00%"],
+          ["Harvest / Field", 2180, "18.30%", "1.00%", "72.50%"],
+          ["Processing / Packaging", 890, "14.65%", "0.80%", "60.00%"],
+          ["Transport / Distribution", 1150, "12.10%", "0.20%", "45.00%"],
+          ["Wholesale & Retail", 940, "9.75%", "0.50%", "38.00%"]
         ],
-        rowCount: "4 rows returned",
+        rowCount: "5 supply chain stages",
         executionTime: "18ms"
       },
-      daxSnippet: `// DAX Measure: Attrition Velocity by Rating Cohort
-Tutor Attrition Rate = 
-VAR TotalTutorsInCohort = COUNTROWS('Tutors')
-VAR ChurnedInCohort = CALCULATE(COUNTROWS('Tutors'), 'Tutors'[Status] = "Churned")
-RETURN 
-    DIVIDE(ChurnedInCohort, TotalTutorsInCohort, 0)`
+      daxSnippet: `// DAX Measure: Food Rescue Rate % & Avoided Carbon (CO2e)
+Food Rescue Rate % = 
+DIVIDE(
+    SUM('FoodRescue'[meals_rescued]), 
+    SUM('FoodRescue'[meals_available]), 
+    0
+)
+
+// DAX Measure: Estimated Total CO2e Avoided (kg)
+Total CO2e Avoided (kg) = 
+SUM('FoodRescue'[co2e_avoided_kg])`
     },
     {
       id: "ecommerce",
