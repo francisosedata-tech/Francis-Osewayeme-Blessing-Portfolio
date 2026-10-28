@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { FileText, Menu, X, Rocket } from 'lucide-react';
+import { FileText, Menu, X } from 'lucide-react';
 
 interface ControlHUDProps {
   onOpenCvStudio: () => void;
   onNavigateToSection: (sectionId: string) => void;
-  onOpenDeployModal?: () => void;
 }
 
 export const ControlHUD: React.FC<ControlHUDProps> = ({
   onOpenCvStudio,
-  onNavigateToSection,
-  onOpenDeployModal
+  onNavigateToSection
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -77,27 +75,14 @@ export const ControlHUD: React.FC<ControlHUDProps> = ({
         </nav>
 
         {/* Action button & Hamburger */}
-        <div className="flex items-center space-x-2.5">
-          {onOpenDeployModal && (
-            <button
-              onClick={onOpenDeployModal}
-              id="header-deploy-vercel-btn"
-              className="px-3 py-2 rounded-lg bg-slate-900 text-white hover:bg-slate-800 font-bold text-xs tracking-wider uppercase transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-xs group"
-              title="Deploy or publish this portfolio to Vercel"
-            >
-              <Rocket className="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform" />
-              <span className="hidden sm:inline">PUBLISH ON VERCEL</span>
-              <span className="sm:hidden">VERCEL</span>
-            </button>
-          )}
-
+        <div className="flex items-center space-x-3">
           <button
             id="header-cv-surgeon-btn"
             onClick={onOpenCvStudio}
-            className="px-3.5 py-2 rounded-lg bg-blue-50 border border-blue-200 text-[#2563eb] hover:bg-[#2563eb] hover:text-white font-bold text-xs tracking-wider uppercase transition-all duration-200 flex items-center gap-1.5 cursor-pointer shadow-xs group hover:scale-105"
+            className="px-4 py-2 rounded-lg bg-blue-50 border border-blue-200 text-[#2563eb] hover:bg-[#2563eb] hover:text-white font-bold text-xs tracking-wider uppercase transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm group hover:scale-105"
           >
-            <FileText className="w-3.5 h-3.5 text-[#2563eb] group-hover:text-white transition-all" />
-            <span>RESUME / CV</span>
+            <FileText className="w-4 h-4 text-[#2563eb] group-hover:text-white group-hover:scale-110 transition-all" />
+            <span>VIEW RESUME / CV</span>
           </button>
 
           {/* Hamburger toggle for mobile */}
@@ -147,19 +132,6 @@ export const ControlHUD: React.FC<ControlHUDProps> = ({
           </button>
 
           <div className="pt-2 border-t border-slate-100 flex flex-col gap-2">
-            {onOpenDeployModal && (
-              <button
-                onClick={() => {
-                  onOpenDeployModal();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full py-2.5 rounded-lg bg-slate-900 text-white font-bold text-xs uppercase flex items-center justify-center gap-2"
-              >
-                <Rocket className="w-4 h-4 text-blue-400" />
-                <span>Publish to Vercel</span>
-              </button>
-            )}
-
             <button
               onClick={() => {
                 onOpenCvStudio();

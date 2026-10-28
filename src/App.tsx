@@ -6,13 +6,11 @@ import { CaseFilesProjects } from './components/CaseFilesProjects';
 import { DataStreamsExperience } from './components/DataStreamsExperience';
 import { OpenChannelContact } from './components/OpenChannelContact';
 import { CvSurgeonDrawer } from './components/CvSurgeonDrawer';
-import { VercelDeployModal } from './components/VercelDeployModal';
-import { Heart, Brain, FolderOpen, Rocket } from 'lucide-react';
+import { Heart, Brain, FolderOpen } from 'lucide-react';
 import { RESTRUCTURED_CV_DATA } from './data/cvData';
 
 export default function App() {
   const [isCvStudioOpen, setIsCvStudioOpen] = useState(false);
-  const [isDeployModalOpen, setIsDeployModalOpen] = useState(false);
 
   const handleNavigateToSection = (sectionId: string) => {
     if (sectionId === 'top' || sectionId === 'home') {
@@ -32,7 +30,6 @@ export default function App() {
       <ControlHUD
         onOpenCvStudio={() => setIsCvStudioOpen(true)}
         onNavigateToSection={handleNavigateToSection}
-        onOpenDeployModal={() => setIsDeployModalOpen(true)}
       />
 
       {/* Main Content Sections */}
@@ -42,7 +39,6 @@ export default function App() {
         <TerminalHero
           onOpenCvStudio={() => setIsCvStudioOpen(true)}
           onNavigateToSection={handleNavigateToSection}
-          onOpenDeployModal={() => setIsDeployModalOpen(true)}
         />
 
         {/* 2. About & Skills Sections */}
@@ -96,14 +92,6 @@ export default function App() {
             <FolderOpen className="w-3.5 h-3.5" />
             <span>Harmony Grove BI Case Study on GitHub</span>
           </a>
-          <span className="text-slate-300">&bull;</span>
-          <button
-            onClick={() => setIsDeployModalOpen(true)}
-            className="inline-flex items-center gap-1.5 text-slate-700 hover:text-[#2563eb] font-semibold transition-colors cursor-pointer"
-          >
-            <Rocket className="w-3.5 h-3.5 text-blue-500" />
-            <span>Publish / Deploy to Vercel Guide</span>
-          </button>
         </div>
       </footer>
 
@@ -111,12 +99,6 @@ export default function App() {
       <CvSurgeonDrawer
         isOpen={isCvStudioOpen}
         onClose={() => setIsCvStudioOpen(false)}
-      />
-
-      {/* Vercel Deployment Guide Modal */}
-      <VercelDeployModal
-        isOpen={isDeployModalOpen}
-        onClose={() => setIsDeployModalOpen(false)}
       />
 
     </div>
