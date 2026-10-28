@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Award, CheckCircle2, Sparkles, Brain, Database, UserCheck, TrendingUp } from 'lucide-react';
+import { BookOpen, Award, CheckCircle2, Sparkles, Brain, Database, UserCheck, TrendingUp, Download, ExternalLink } from 'lucide-react';
 import { RESTRUCTURED_CV_DATA } from '../data/cvData';
 
 export const DatabankAbout: React.FC = () => {
@@ -51,10 +51,27 @@ export const DatabankAbout: React.FC = () => {
               
               <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-xs space-y-5">
                 {RESTRUCTURED_CV_DATA.education.map((edu, idx) => (
-                  <div key={idx} className="space-y-1">
-                    <div className="text-sm font-bold text-slate-900">{edu.degree}</div>
-                    <div className="text-xs text-[#2563eb] font-mono-code font-semibold">{edu.institution} ({edu.year})</div>
-                    <p className="text-xs text-slate-500">{edu.relevance}</p>
+                  <div key={idx} className="space-y-1.5 pb-3 border-b border-slate-100 last:border-b-0 last:pb-0">
+                    <div className="flex items-center justify-between flex-wrap gap-1">
+                      <div className="text-sm font-bold text-slate-900">{edu.degree}</div>
+                      <span className="text-[11px] text-[#2563eb] font-mono-code font-semibold">{edu.year}</span>
+                    </div>
+                    <div className="text-xs text-slate-600 font-medium">
+                      {edu.institution} {edu.location ? `• ${edu.location}` : ''}
+                    </div>
+                    {edu.relevance && <p className="text-xs text-slate-500 leading-relaxed">{edu.relevance}</p>}
+                    {edu.courses && (
+                      <div className="pt-1 flex flex-wrap gap-1.5">
+                        {edu.courses.map((course, cIdx) => (
+                          <span
+                            key={cIdx}
+                            className="text-[10px] font-mono-code bg-slate-50 text-slate-700 px-2 py-0.5 rounded border border-slate-200"
+                          >
+                            • {course}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
 
@@ -67,9 +84,26 @@ export const DatabankAbout: React.FC = () => {
                     {RESTRUCTURED_CV_DATA.certifications.map((cert, idx) => (
                       <div key={idx} className="p-3 rounded-lg bg-slate-50 border border-slate-200 flex items-start gap-2.5">
                         <Award className="w-4 h-4 text-[#2563eb] shrink-0 mt-0.5" />
-                        <div>
+                        <div className="min-w-0">
                           <div className="text-xs font-bold text-slate-900 leading-tight">{cert.title}</div>
                           <div className="text-[11px] text-slate-500 font-mono-code">{cert.issuer}</div>
+                          {cert.credentialId && (
+                            <div className="mt-1 flex items-center gap-1.5 flex-wrap">
+                              <span className="text-[10px] font-mono-code font-bold text-[#2563eb] bg-blue-50 border border-blue-200 px-1.5 py-0.5 rounded">
+                                ID: {cert.credentialId}
+                              </span>
+                              {cert.verificationUrl && (
+                                <a
+                                  href={cert.verificationUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[10px] text-[#2563eb] hover:underline font-mono-code font-semibold"
+                                >
+                                  Verify &rarr;
+                                </a>
+                              )}
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -81,6 +115,21 @@ export const DatabankAbout: React.FC = () => {
                   <div className="text-xs text-slate-600">
                     <strong className="text-slate-900">JCI Southern Conference 2026:</strong> 3rd Place Winner in Public Speaking & Debate Championship.
                   </div>
+                </div>
+
+                {/* Direct Download Official CV PDF */}
+                <div className="pt-3 border-t border-slate-200 flex items-center justify-between flex-wrap gap-2">
+                  <div className="text-[11px] font-mono-code text-slate-500">
+                    Latest Updated PDF Available
+                  </div>
+                  <a
+                    href={RESTRUCTURED_CV_DATA.header.pdfAssetUrl}
+                    download="Francis_Blessing_Osewayeme_CV.pdf"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white text-xs font-mono-code font-bold shadow-xs transition-colors cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download Official CV (PDF)</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -109,19 +158,23 @@ export const DatabankAbout: React.FC = () => {
             <div className="minimal-card p-6 bg-white border border-slate-200 rounded-xl space-y-4 shadow-xs">
               <h3 className="text-sm font-mono-code font-bold uppercase text-slate-900 flex items-center gap-2">
                 <Brain className="w-4 h-4 text-[#2563eb]" />
-                The Behavioral BI Advantage
+                The Behavioral BI & AI Advantage
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Quantitative data indicates <em>what</em> is happening in your organization, but sociological insight explains <em>why</em>. Combining Power BI analytics with human factors optimizes both bottom-line profit and employee retention.
+                Quantitative data indicates <em>what</em> is happening in your organization, but sociological insight explains <em>why</em>. Combining Power BI analytics with human factors and AI-assisted problem solving optimizes both bottom-line profit and organizational performance.
               </p>
-              <div className="grid grid-cols-2 gap-2.5 pt-2 text-[11px] font-mono-code text-slate-800">
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2 font-bold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2563eb]" />
-                  <span>Quantitative Rigor</span>
+              <div className="grid grid-cols-3 gap-2 pt-2 text-[11px] font-mono-code text-slate-800">
+                <div className="p-2 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 font-bold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2563eb] shrink-0" />
+                  <span className="truncate">Data Rigor</span>
                 </div>
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-2 font-bold">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2563eb]" />
-                  <span>People Analytics</span>
+                <div className="p-2 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 font-bold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2563eb] shrink-0" />
+                  <span className="truncate">People Metrics</span>
+                </div>
+                <div className="p-2 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 font-bold">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2563eb] shrink-0" />
+                  <span className="truncate">AI Workflows</span>
                 </div>
               </div>
             </div>
@@ -141,34 +194,42 @@ export const DatabankAbout: React.FC = () => {
             My Toolkit
           </span>
           <h2 className="text-3xl sm:text-4xl font-heading-bold font-extrabold text-slate-900">
-            BI & People Analytics <span className="text-[#2563eb]">Stack</span>
+            BI, People Analytics & <span className="text-[#2563eb]">AI Stack</span>
           </h2>
           <p className="text-base text-slate-600 max-w-2xl">
-            Tools and technologies I use to turn data into business and people intelligence.
+            Core technologies and analytical frameworks I use to turn data into business and people intelligence.
           </p>
         </div>
 
-        {/* 2-Group Skills Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* 3-Group Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {RESTRUCTURED_CV_DATA.skillGroups.map((group, idx) => (
             <div
               key={idx}
-              className="minimal-card p-6 sm:p-8 bg-slate-50/60 border border-slate-200 rounded-xl space-y-4 shadow-none"
+              className="minimal-card p-6 bg-slate-50/70 border border-slate-200 rounded-xl space-y-4 shadow-none flex flex-col justify-between"
             >
-              <h3 className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#2563eb] flex items-center gap-2">
-                {idx === 0 ? <Database className="w-4 h-4 text-[#2563eb]" /> : <UserCheck className="w-4 h-4 text-[#2563eb]" />}
-                {group.title}
-              </h3>
+              <div className="space-y-3">
+                <h3 className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#2563eb] flex items-center gap-2">
+                  {idx === 0 ? (
+                    <Sparkles className="w-4 h-4 text-[#2563eb]" />
+                  ) : idx === 1 ? (
+                    <Database className="w-4 h-4 text-[#2563eb]" />
+                  ) : (
+                    <UserCheck className="w-4 h-4 text-[#2563eb]" />
+                  )}
+                  {group.title}
+                </h3>
 
-              <div className="flex flex-wrap gap-2.5 pt-2">
-                {group.skills.map((skill, sIdx) => (
-                  <span
-                    key={sIdx}
-                    className="px-4 py-2 rounded-full bg-white text-xs font-semibold text-slate-700 border border-slate-200 hover:border-[#2563eb] hover:bg-blue-50 hover:text-[#2563eb] transition-all cursor-default shadow-xs"
-                  >
-                    {skill}
-                  </span>
-                ))}
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {group.skills.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="px-3 py-1.5 rounded-full bg-white text-xs font-semibold text-slate-700 border border-slate-200 hover:border-[#2563eb] hover:bg-blue-50 hover:text-[#2563eb] transition-all cursor-default shadow-2xs"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

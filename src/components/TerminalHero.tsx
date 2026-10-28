@@ -1,16 +1,18 @@
 import React from 'react';
-import { ArrowRight, FileText, ChevronDown, LineChart } from 'lucide-react';
+import { ArrowRight, FileText, ChevronDown, LineChart, Rocket } from 'lucide-react';
 import { MadButton } from './MadButton';
 import { RESTRUCTURED_CV_DATA } from '../data/cvData';
 
 interface TerminalHeroProps {
   onOpenCvStudio: () => void;
   onNavigateToSection: (sectionId: string) => void;
+  onOpenDeployModal?: () => void;
 }
 
 export const TerminalHero: React.FC<TerminalHeroProps> = ({
   onOpenCvStudio,
-  onNavigateToSection
+  onNavigateToSection,
+  onOpenDeployModal
 }) => {
   return (
     <section id="home" className="relative min-h-[92vh] flex flex-col justify-between pt-28 pb-12 px-6 max-w-7xl mx-auto bg-architect-grid">
@@ -34,13 +36,13 @@ export const TerminalHero: React.FC<TerminalHeroProps> = ({
           </h1>
 
           {/* Static Professional Subtitle */}
-          <div className="text-xl sm:text-2xl font-mono-code text-slate-700 font-bold tracking-tight">
-            Business Intelligence Analyst & People Analytics Specialist
+          <div className="text-xl sm:text-2xl font-mono-code text-slate-800 font-bold tracking-tight">
+            Data Analyst <span className="text-[#2563eb]">&bull;</span> Business Intelligence Analyst <span className="text-[#2563eb]">&bull;</span> People Analyst
           </div>
 
           {/* Hero Bio Paragraph */}
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
-            I transform raw data into strategic business and people intelligence. With expertise in <strong className="text-slate-900 font-bold">Power BI, SQL, Python, and Excel</strong>, I build dashboards and analytical frameworks that drive smarter decisions for organizations.
+            BI & People Analyst combining quantitative data modeling with sociological insight and HR metrics. Proven track record in engineering multi-state booking intelligence systems, reducing data errors by 40%, and building executive Power BI dashboards with expertise in <strong className="text-slate-900 font-bold">Power BI, SQL, Python, Excel, and AI-assisted workflows</strong>.
           </p>
 
           {/* Hero Action Buttons */}
@@ -76,15 +78,28 @@ export const TerminalHero: React.FC<TerminalHeroProps> = ({
             </a>
           </div>
 
-          {/* Quick CV Download Trigger */}
-          <div className="pt-2">
+          {/* Quick CV and Deploy Triggers */}
+          <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono-code font-bold">
             <button
               onClick={onOpenCvStudio}
-              className="inline-flex items-center gap-2 text-xs font-mono-code text-[#2563eb] hover:text-[#1d4ed8] font-bold transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-[#2563eb] hover:text-[#1d4ed8] transition-colors cursor-pointer"
             >
               <FileText className="w-4 h-4" />
-              <span>View Executive Resume / CV Summary →</span>
+              <span>View Executive Resume / CV Studio →</span>
             </button>
+
+            {onOpenDeployModal && (
+              <>
+                <span className="text-slate-300 hidden sm:inline">&bull;</span>
+                <button
+                  onClick={onOpenDeployModal}
+                  className="inline-flex items-center gap-1.5 text-slate-600 hover:text-slate-900 transition-colors cursor-pointer"
+                >
+                  <Rocket className="w-3.5 h-3.5 text-blue-500" />
+                  <span>Publish to Vercel Guide →</span>
+                </button>
+              </>
+            )}
           </div>
 
         </div>

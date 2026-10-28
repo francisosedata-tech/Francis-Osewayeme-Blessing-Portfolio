@@ -17,7 +17,8 @@ import {
   ChevronRight, 
   Image as ImageIcon, 
   BarChart3, 
-  ZoomIn 
+  ZoomIn,
+  Award 
 } from 'lucide-react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, ArcElement, RadialLinearScale, Title, Tooltip, Legend } from 'chart.js';
 import { Line, Bar, Doughnut, Radar } from 'react-chartjs-2';
@@ -41,6 +42,7 @@ export const CaseFilesProjects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<CVProject | null>(null);
   const [activeTab, setActiveTab] = useState<Record<string, 'dashboard' | 'sql' | 'dax' | 'insights'>>({
     'food-waste-africa': 'dashboard',
+    'harmony-grove': 'dashboard',
     'ecommerce': 'dashboard',
     'realestate': 'dashboard'
   });
@@ -150,7 +152,7 @@ export const CaseFilesProjects: React.FC = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {RESTRUCTURED_CV_DATA.projects.map((project) => {
           const currentTab = activeTab[project.id] || 'dashboard';
           const screenshots = project.dashboardScreenshots || (
@@ -526,17 +528,32 @@ export const CaseFilesProjects: React.FC = () => {
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
 
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono-code text-slate-700 hover:text-[#2563eb] hover:border-blue-300 transition-all flex items-center gap-1.5 font-semibold shadow-xs"
-                  >
-                    <FolderGit2 className="w-3.5 h-3.5 text-[#2563eb]" />
-                    <span>GitHub</span>
-                  </a>
-                )}
+                <div className="flex items-center gap-2">
+                  {project.verificationUrl && (
+                    <a
+                      href={project.verificationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-2.5 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-xs font-mono-code text-[#2563eb] hover:bg-blue-100 transition-all flex items-center gap-1 font-bold shadow-xs"
+                      title={project.credentialId ? `Verified Certificate ID: ${project.credentialId}` : 'Verified Certificate'}
+                    >
+                      <Award className="w-3.5 h-3.5 text-[#2563eb]" />
+                      <span>Certificate</span>
+                    </a>
+                  )}
+
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-mono-code text-slate-700 hover:text-[#2563eb] hover:border-blue-300 transition-all flex items-center gap-1.5 font-semibold shadow-xs"
+                    >
+                      <FolderGit2 className="w-3.5 h-3.5 text-[#2563eb]" />
+                      <span>GitHub</span>
+                    </a>
+                  )}
+                </div>
               </div>
 
             </div>
@@ -758,16 +775,28 @@ export const CaseFilesProjects: React.FC = () => {
               <span className="text-xs font-mono-code text-[#2563eb] font-bold">
                 IMPACT: {selectedProject.impact}
               </span>
-              {selectedProject.githubUrl && (
-                <a
-                  href={selectedProject.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2.5 rounded-lg bg-[#2563eb] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#1d4ed8] transition-colors flex items-center gap-2 shadow-xs"
-                >
-                  <ExternalLink className="w-4 h-4" /> VIEW COMPLETE CODE ON GITHUB
-                </a>
-              )}
+              <div className="flex items-center gap-3 flex-wrap">
+                {selectedProject.verificationUrl && (
+                  <a
+                    href={selectedProject.verificationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-lg bg-blue-50 border border-blue-200 text-[#2563eb] font-bold text-xs uppercase tracking-wider hover:bg-blue-100 transition-colors flex items-center gap-2 shadow-xs"
+                  >
+                    <Award className="w-4 h-4 text-[#2563eb]" /> VERIFY CERTIFICATE {selectedProject.credentialId ? `(${selectedProject.credentialId})` : ''}
+                  </a>
+                )}
+                {selectedProject.githubUrl && (
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-lg bg-[#2563eb] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#1d4ed8] transition-colors flex items-center gap-2 shadow-xs"
+                  >
+                    <ExternalLink className="w-4 h-4" /> VIEW COMPLETE CODE ON GITHUB
+                  </a>
+                )}
+              </div>
             </div>
 
           </div>

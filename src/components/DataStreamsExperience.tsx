@@ -66,10 +66,12 @@ export const DataStreamsExperience: React.FC<DataStreamsExperienceProps> = ({ on
             </div>
 
             <div className="text-xs font-mono-code text-slate-500 space-y-0.5 sm:text-right">
-              <div className="flex items-center sm:justify-end gap-1.5 text-[#2563eb] font-semibold">
-                <Calendar className="w-3 h-3" />
-                <span>{role.period}</span>
-              </div>
+              {role.period ? (
+                <div className="flex items-center sm:justify-end gap-1.5 text-[#2563eb] font-semibold">
+                  <Calendar className="w-3 h-3" />
+                  <span>{role.period}</span>
+                </div>
+              ) : null}
               <div className="flex items-center sm:justify-end gap-1.5">
                 <MapPin className="w-3 h-3 text-slate-400" />
                 <span>{role.location}</span>
